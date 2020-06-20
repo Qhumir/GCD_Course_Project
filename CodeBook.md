@@ -5,26 +5,45 @@ date: "19/6/2020"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+## Subject identification
 
-## R Markdown
+The files subject_train.txt and subject_test.txt contain the subject identification, I read the data and named the unique column as "id".
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## The Activities
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+The file activity_labels.txt has the codification of the activities and the description of the activities. I named:
+
+CodeAct: "the codification of the activities (first column)"
+Activity: "the description of the activities (first column)"
+
+The files y_train.txt and y_test.txt contain the activities codifications and I named "CodeAct".
 
 ```{r cars}
 summary(cars)
 ```
 
-## Including Plots
+## Measurements variables
 
-You can also embed plots, for example:
+The files X_train.txt and X_test.txt has the numeric data (measurements variables) for trainig and test respectively.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+The file features.txt contain the description of the measurements variables. I used it to named the variables but I replaced:
+"," by "."
+"(" by "."
+"-" by "."
+"(" by "."
+")" by "."
+for a good names.
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Final Tidy Data
+
+I joined subject, activities and measurements of training and test, separately. Then, I join training tidy data and test tidy data.
+
+
+## Results
+
+I putted the mean and standard deviation of every measurement variable in the dataframe "vars mean_sd".
+
+I putted the mean of every measurement variable by activity in the dataframe "ActData".
+
+
+Thank you!
