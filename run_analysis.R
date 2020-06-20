@@ -59,9 +59,7 @@ Data <- rbind(train, test)
 
 ######## 2. Extracts only the measurements on the mean and standard deviation for each measurement.
 
-meltData <- melt(Data, id = c("CodeAct", "id"),measure.vars = names(test.x))
-vars_mean_sd <- do.call(rbind,lapply(split(meltData,meltData$variable), summarize, 
-                  mean = mean(value), sd = sd(value)))
+Data <- cbind(Data[, 1:2], Data[,grepl("mean|std",names(Data))])
 
 
 
@@ -81,7 +79,7 @@ Data <- merge(act_labels, Data, by = "CodeAct")
 ######## 5. From the data set in step 4, creates a second, independent tidy data set with the average
 #           of each variable for each activity and each subject.
 
-meltData <- melt(Data, id = c("CodeAct", "Activity", "id"),measure.vars = names(test.x))
-ActData <- dcast(meltData, Activity ~ variable, mean)
+meltData <- melt(Data, id = c("CodeAct", "Activity", "id"), measure.vars = names(Data)[-c(1:3)])
+ActData <- dcast(meltData, id + Activity ~ variable, mean)
 
 write.table(ActData,file="tidyData.txt")
