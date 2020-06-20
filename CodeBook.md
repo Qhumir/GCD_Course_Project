@@ -43,15 +43,15 @@ names(test.x) <- features$V2 %>% gsub(",|-|\\(|\\)", "\\.",.)  %>% gsub("\\.\\."
 ```
 
 
-## Final Tidy Data
+## The Data
 
 I joined subject, activities and measurements of training and test, separately. Then, I join training tidy data and test tidy data. I named the variables as I described earlier.
 
 
 ## Results
 
-I putted the mean and standard deviation of every measurement variable in the dataframe "vars mean_sd".
+I putted the mean and standard deviation of every measurement variable in the data frame "Data".
 
-I putted the mean of every measurement variable by activity in the dataframe "ActData".
+I putted the mean of every measurement variable by activity and subject in the data frame "ActData".
 
 Thank you!
