@@ -9,13 +9,14 @@ output: html_document
 
 The files subject_train.txt and subject_test.txt contain the subject identification, I read the data and named the unique column as "id".
 
+id: "The id od the subjects"
 
 ## The Activities
 
 The file activity_labels.txt has the codification of the activities and the description of the activities. I named:
 
-CodeAct: "the codification of the activities (first column)"
-Activity: "the description of the activities (first column)"
+CodeAct: "The codification of the activities (first column)"
+Activity: "The description of the activities (first column)"
 
 The files y_train.txt and y_test.txt contain the activities codifications and I named "CodeAct".
 
