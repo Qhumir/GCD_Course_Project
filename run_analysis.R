@@ -83,3 +83,5 @@ meltData <- melt(Data, id = c("CodeAct", "Activity", "id"), measure.vars = names
 ActData <- dcast(meltData, id + Activity ~ variable, mean)
 
 write.table(ActData,file="tidyData.txt")
+
+
